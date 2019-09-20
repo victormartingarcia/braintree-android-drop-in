@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.braintreepayments.api.dropin.view.SecureLoadingProgressBar
+    <com.braintreecv1payments.api.dropin.view.SecureLoadingProgressBar
         android:id="@+id/bt_header_loading_spinner"
         android:layout_width="40dp"
         android:layout_height="40dp"

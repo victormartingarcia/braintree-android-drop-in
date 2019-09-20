@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent">
 
-    <com.braintreepayments.api.dropin.view.LoadingHeader
+    <com.braintreecv1payments.api.dropin.view.LoadingHeader
         android:id="@+id/bt_header_container"
         android:layout_width="match_parent"
         android:layout_height="@dimen/bt_header_container_height"
@@ -30,7 +30,7 @@
 
             <include layout="@layout/bt_payment_description" />
 
-            <fragment android:name="com.braintreepayments.api.PaymentButton"
+            <fragment android:name="com.braintreecv1payments.api.PaymentButton"
                 android:id="@+id/bt_payment_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

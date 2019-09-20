@@ -63,7 +63,7 @@
             android:layout_height="match_parent"
             android:background="@color/bt_white">
 
-            <com.braintreepayments.api.dropin.view.SecureLoadingProgressBar
+            <com.braintreecv1payments.api.dropin.view.SecureLoadingProgressBar
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_centerInParent="true" />

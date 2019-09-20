@@ -8,12 +8,12 @@ def GATEWAY_IP = System.properties['GATEWAY_IP'] ?: '"10.0.2.2"';
 def GATEWAY_PORT = System.properties['GATEWAY_PORT'] ?: '"3000"';
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '24.0.0'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 24
+        targetSdkVersion 28
         versionCode 53
         versionName '2.3.8'
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
@@ -39,10 +39,12 @@ android.buildTypes.debug { type ->
 }
 
 dependencies {
-    compile 'com.braintreepayments.api:braintree:2.3.9'
+    implementation fileTree(include: ['*.aar'], dir: '../libs')
+    //compile 'com.braintreecv1payments.api:braintree:2.3.9'
     compile 'com.braintreepayments:card-form:2.3.2'
     compile 'com.google.android.gms:play-services-wallet:[9.0.0,10.0.0)'
 
+    /*
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.1'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
     androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
@@ -56,6 +58,7 @@ dependencies {
     testCompile 'org.powermock:powermock-classloading-xstream:1.6.4'
     testCompile 'org.robolectric:robolectric:3.0'
     testCompile 'org.skyscreamer:jsonassert:1.3.0'
+    */
 }
 
 /* maven deploy + signing */
@@ -85,7 +88,7 @@ signing {
 }
 
 nexusStaging {
-    packageGroup = "com.braintreepayments"
+    packageGroup = "com.braintreecv1payments"
 }
 
 def sonatypeUsername = System.properties.containsKey('sonatypeUsername') ? System.properties['sonatypeUsername'] : ''
@@ -106,7 +109,7 @@ uploadArchives {
 
             pom.project {
                 name 'drop-in'
-                groupId = 'com.braintreepayments.api'
+                groupId = 'com.braintreecv1payments.api'
                 version = "${android.defaultConfig.versionName}"
                 packaging 'aar'
                 description 'Drop-in payment form for Braintree\'s Android SDK. Integrate this library to add a readymade UI for your payments.'
